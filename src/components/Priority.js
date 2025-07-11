@@ -46,7 +46,9 @@ const PriorityNon = () => {
       //     (a, b) => a.arrivalTime - b.arrivalTime
       //   );
 
-      const response = await fetch("http://localhost:5000/api/schedule/prior", {
+      const API_URL = process.env.REACT_APP_API_URL;
+
+      const response = await fetch(`${API_URL}/api/schedule/prior`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(processes),
